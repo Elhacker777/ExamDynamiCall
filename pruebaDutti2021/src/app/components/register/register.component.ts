@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 
@@ -37,14 +37,16 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  registerUser() {
-    if (this.registerForm.invalid) { return }
+  registerUser(form: NgForm) {
+    console.log(this.usuario);
+    console.log(form);
+   /*  if (this.registerForm.invalid) { return }
     // TODO : Falta integrar el servicio para registrar al usuario
     // JSON simulando usuarios
     var userLogin = this.registerForm.value;
     usersList.push(userLogin)
     console.log('User Register -->', usersList)
-    this.router.navigate(['/principal/ships'])
+    this.router.navigate(['/principal/ships']) */
 
   }
 
