@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuarioModel } from 'src/app/models/usuario.model';
 
 // JSON
 import usersList from 'src/assets/json/users.json';
@@ -12,6 +13,9 @@ import usersList from 'src/assets/json/users.json';
 })
 export class RegisterComponent implements OnInit {
 
+  //se crea una nueva instancia del usuarioModel sin inicializar
+  usuario: UsuarioModel;
+
   registerForm: FormGroup;
   dataLoading: boolean = false;
 
@@ -21,6 +25,9 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
+    this.usuario = new UsuarioModel();
+
     this.registerForm = this.fb.group({
       first_name: [ '', [Validators.required, Validators.minLength(3)]],
       last_name: [ '', [Validators.required, Validators.minLength(3)]],
