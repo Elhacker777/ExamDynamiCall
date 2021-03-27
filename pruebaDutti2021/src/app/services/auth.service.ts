@@ -15,6 +15,12 @@ export class AuthService {
     this.leerToken();
   }
 
+  logout(){
+    localStorage.removeItem('token');
+  
+  }
+  
+
   
 login(usuario: UsuarioModel){
   const authData = {

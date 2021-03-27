@@ -4,11 +4,12 @@ import { ShipsComponent } from '../ships/ships.component';
 import { PageOneComponent } from '../page-one/page-one.component';
 import { PageTwoComponent } from '../page-two/page-two.component';
 import { PrincipalComponent } from './principal.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent,
   children: [
-    { path: 'ships', component: ShipsComponent },
+    { path: 'ships', component: ShipsComponent, canActivate: [AuthGuard] },
     { path: 'pageOne', component: PageOneComponent },
     { path: 'pageTwo', component: PageTwoComponent },
   ] }

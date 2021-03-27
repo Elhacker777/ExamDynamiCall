@@ -28,7 +28,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.usuario = new UsuarioModel();
+    this.usuario = new UsuarioModel();    
+
+    if (localStorage.getItem('email'))
+      this.usuario.email = localStorage.getItem('email');
 
     /* this.registerForm = this.fb.group({
       first_name: [ '', [Validators.required, Validators.minLength(3)]],
