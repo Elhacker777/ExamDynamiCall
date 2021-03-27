@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     
     this.usuario = new UsuarioModel();    
+    
 
     if (localStorage.getItem('email'))
       this.usuario.email = localStorage.getItem('email');
@@ -61,7 +62,7 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem('last_name', this.usuario.last_name);
       localStorage.setItem('username', this.usuario.username);
       localStorage.setItem('email', this.usuario.email);
-      localStorage.setItem('password', this.usuario.password);
+      
       
       this.router.navigateByUrl('/principal/ships');
     }, (err)=>{

@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', component: PrincipalComponent,
   children: [
     { path: 'ships', component: ShipsComponent, canActivate: [AuthGuard] },
-    { path: 'pageOne', component: PageOneComponent },
-    { path: 'pageTwo', component: PageTwoComponent },
+    { path: 'pageOne', component: PageOneComponent, canActivate: [AuthGuard] },
+    { path: 'pageTwo', component: PageTwoComponent, canActivate: [AuthGuard] },
   ] }
 ];
 
