@@ -5,17 +5,18 @@
     class="login100-form validate-form flex-sb flex-w">
         <div class="form-group mt-5">
             <input
-                type="text"
-                name="Username"
+                type="email"
+                name="email"
                 class="form-control"
-                [(ngModel)]="usuario.username"
+                [(ngModel)]="usuario.email"
                 required
-                placeholder="Username"/>
+                email
+                placeholder="email"/>
                 <hr class="hr-line">
             <div class="input-group-append form__required"
-            *ngIf="formularioForm.submitted && formularioForm.controls['Username'].errors">
+            *ngIf="formularioForm.submitted && formularioForm.controls['email'].errors">
                 <span class="colorInvalid">
-                    <i>Username is required</i>
+                    <i>email is required</i>
                 </span>
             </div>
         </div>
