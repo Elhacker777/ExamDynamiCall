@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PrincipalModule } from './components/principal/principal.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 // Components
@@ -25,7 +25,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PrincipalModule
+    PrincipalModule,
+    HttpClientModule
 
   ],
   providers: [],
