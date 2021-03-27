@@ -28,18 +28,20 @@ export class RegisterComponent implements OnInit {
     
     this.usuario = new UsuarioModel();
 
-    this.registerForm = this.fb.group({
+    /* this.registerForm = this.fb.group({
       first_name: [ '', [Validators.required, Validators.minLength(3)]],
       last_name: [ '', [Validators.required, Validators.minLength(3)]],
       username: [ '', [Validators.required, Validators.minLength(3)]],
       email: [ '', [Validators.required, Validators.minLength(6)]],
 
-    })
+    }) */
   }
 
   registerUser(form: NgForm) {
-    console.log(this.usuario);
-    console.log(form);
+    if( form.invalid){
+      return;
+    }
+
    /*  if (this.registerForm.invalid) { return }
     // TODO : Falta integrar el servicio para registrar al usuario
     // JSON simulando usuarios
