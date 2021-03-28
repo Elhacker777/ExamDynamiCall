@@ -1,4 +1,4 @@
-import { Nave } from 'src/models/naves.model';
+import { Nave } from 'src/app/models/naves.model';
 import * as fromNaveActions from '../actions/naves.action';
 
 export interface NaveState {

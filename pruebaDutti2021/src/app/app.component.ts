@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from "@ngrx/store";
+import * as fromStore  from './store';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'massimo-dutti';
+
+  constructor(private store : Store< fromStore.AppState>){
+    store.select('naves').subscribe(rs => {
+      console.log()
+    })
+  }
 }

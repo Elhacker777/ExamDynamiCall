@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PrincipalModule } from './components/principal/principal.module';
 import { HttpClientModule } from '@angular/common/http';
+import {StoreModule } from "@ngrx/store";
 
 
 // Components
@@ -11,6 +12,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { reducers } from 'src/app/store';
+
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
     FormsModule,
     ReactiveFormsModule,
     PrincipalModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers)
 
   ],
   providers: [],
