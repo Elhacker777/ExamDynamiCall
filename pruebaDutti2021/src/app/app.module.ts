@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { reducers } from 'src/app/store';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 
 
@@ -30,7 +31,8 @@ import { reducers } from 'src/app/store';
     ReactiveFormsModule,
     PrincipalModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({})
 
   ],
   providers: [],

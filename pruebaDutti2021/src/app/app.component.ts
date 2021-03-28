@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private store : Store< fromStore.AppState>){
     store.select('naves').subscribe(rs => {
-      console.log()
-    })
+      console.log(rs);
+    });
   }
 }
