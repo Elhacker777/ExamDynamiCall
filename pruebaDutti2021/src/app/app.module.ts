@@ -12,8 +12,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-import { reducers } from 'src/app/store';
+import { effects, reducers } from 'src/app/store';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -32,7 +33,8 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     PrincipalModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({})
+    StoreDevtoolsModule.instrument({}),
+    EffectsModule.forRoot(effects)
 
   ],
   providers: [],

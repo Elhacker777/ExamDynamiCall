@@ -16,12 +16,31 @@ export const initialState : NaveState = {
     
 }
 
-export function reducer(state = initialState, action){
+export function reducer(state = initialState, action: fromNaveActions.NaveActions){
     switch(action.type){
         case fromNaveActions.LOAD_NAVES: {
             return {
                 ...state,
                 loading: true
+            }
+        }
+
+        case fromNaveActions.LOAD_NAVES_SUCCESS: {
+            const data = action.payload;
+            return {
+                ...state,
+                loading: false,
+                loaded: true,
+                data
+            }
+        }
+
+        case fromNaveActions.LOAD_NAVES_FAIL:{
+            return {
+                ...state,
+                loading: false,
+                loaded: false,
+                error: action.payload
             }
         }
 
@@ -31,3 +50,8 @@ export function reducer(state = initialState, action){
 
     }
 }
+
+export const getNaves = (state: NaveState) => state.data;
+export const getNavesLoaded = (state: NaveState) => state.loaded;
+export const getNavesLoading = (state: NaveState) => state.loading;
+export const getNavesError = (state: NaveState) => state.error;

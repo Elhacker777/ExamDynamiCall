@@ -12,7 +12,7 @@ export class ShipsDetailsComponent implements OnInit {
   @Input() dataList: any;
   config: any;
   shipId: string = '';
-  url: string = '';
+  url: string = 'https://starwars-visualguide.com/assets/img/starships/5.jpg';
   // Modal
   titleDetails: string = '';
   modelDetails: string = '';
@@ -31,8 +31,9 @@ export class ShipsDetailsComponent implements OnInit {
 
   getStarshipId(url) {
     this.shipId = url.slice(0, -1)
-    const urlImage = `${this.shipId}.jpg`
-    return urlImage !== "";
+    //const urlImage = `${this.shipId}.jpg `
+    const urlImage = "https://starwars-visualguide.com/assets/img/starships/5.jpg";
+    return urlImage ;
   }
 
   pageChanged(event){
